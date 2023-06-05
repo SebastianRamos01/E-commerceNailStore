@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stylesProductDetail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <%- include('../partials/head.ejs') %>
+    <title>Detalles del producto</title>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <article class="articulo">
+            <div class="imgBox">
+                <img id="img-product" src="<%= detalle.image %>" alt="">
+            </div>
+            <div class="edits">
+                <h3><%= detalle.name%></h3>
+                <div class="precio">$ <%= detalle.price%></div>
+                <h4 class="h4">Descripción</h4>
+                <p class="descripcion"><%= detalle.description%></p>
+                <div class="categoria">
+                    <h5>Categoría: </h5>
+                    <p class="p"><%= detalle.category%>.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

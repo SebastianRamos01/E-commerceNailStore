@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stylescCart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <%- include('../partials/head.ejs') %>
+        <title>Carrito De Compras</title>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+        <main>
+            <section class="elementos">
+                <h2>ELEMENTOS EN TU CARRITO DE COMPRAS</h2>
+                <div class="producto">
+                    <img src="/images/espacioImagen.jpg" alt="">
+                    <div class="descripcion">
+                        <div class="nombre">NOMBRE DEL PRODUCTO</div>
+                        <div class="precio">$ 0000</div>
+                    </div>
+                </div>
+                <div class="producto">
+                    <img src="/images/espacioImagen.jpg" alt="">
+                    <div class="descripcion">
+                        <div class="nombre">NOMBRE DEL PRODUCTO</div>
+                        <div class="precio">$ 0000</div>
+                    </div>
+                </div>
+                <div class="producto">
+                    <img src="/images/espacioImagen.jpg" alt="">
+                    <div class="descripcion">
+                        <div class="nombre">NOMBRE DEL PRODUCTO</div>
+                        <div class="precio">$ 0000</div>
+                    </div>
+                </div>
+            </section>
+            <section class="resumen">
+                <h2>RESUMEN DE TU COMPRA</h2>
+                <ul class="unorderList">
+                    <li>NOMBRE DEL PRODUCTO $0000</li>
+                    <li>NOMBRE DEL PRODUCTO $0000</li>
+                    <li>NOMBRE DEL PRODUCTO $0000</li>
+                </ul>
+                <div>
+                    <div class="total">
+                        <p id="total">TOTAL</p>
+                        <p id="precioTotal">$0000</p>
+                    </div>
+                    <div class="metodospago">IR A PAGAR AHORA</div>
+                    <div class="irAPagar">
+                        <div class="metodoPago"></div>
+                        <div class="metodoPago"></div>
+                        <div class="metodoPago"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%- include('../partials/footer.ejs') %>
+</body>
+</html>

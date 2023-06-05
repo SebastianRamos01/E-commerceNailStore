@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #EEEEEE;
+}
+.main{
+    display: flex;
+    justify-content: center;
+}
+.section-box{
+    background-color: white;
+    width: 90%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    border: solid 1px black;    
+}
+.register-image{
+    width: 50%;
+}
+.form-box{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.main-title{
+    font-family: 'Aboreto', cursive;
+    font-size: 40px;
+}
+.titles-box{
+    font-family: 'Aboreto', cursive;
+    padding: 3px;
+}
+.input{
+    outline: none;
+    border: none;
+    padding: 5px;
+    width: 100%;
+}
+.input-box{
+    border: solid 1px black;
+}
+.send-box{
+    border: solid 1px black;
+    margin: 5px 5px 5px 0px;
+    width: fit-content;
+}
+.send-botom{
+    background-color: white;
+    padding: 5px;
+    border: none;
+}
