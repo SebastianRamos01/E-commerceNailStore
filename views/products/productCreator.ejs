@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/stylesProductCreator.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+    <%- include('../partials/head.ejs') %>
+    <title>Crea tu Producto</title>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <div class="main-div">
+            <form action="/shop/product-creator" method="POST">
+                <div class="main-title">
+                    Crea tu Producto
+                </div>
+                <div class="div-box">
+                    <div class="div-title">
+                        <label for="">Nombra a tu Producto</label>
+                    </div>
+                    <div class="div-input">
+                        <input type="text" name="name" id="">
+                    </div> 
+                </div>
+                <div class="div-box">
+                    <div class="div-title">
+                        <label for="">Describe tu Producto</label>
+                    </div>
+                    <div class="div-input">
+                        <textarea name="description" id="" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="div-box">
+                    <div class="div-title">
+                        <label for="">Categoria del Producto</label>
+                    </div>
+                    <div class="div-input-check">
+                        <div>
+                            <input type="checkbox" name="category" id="">Producto    
+                        </div>
+                        <div>
+                            <input type="checkbox" name="category" id="">Servicio
+                        </div>
+                    </div>
+                </div>
+                <div class="div-box">
+                    <div class="div-title">
+                        <label for="">Define el Precio de tu Producto</label>
+                    </div>
+                    <div class="div-input">
+                        <input type="text" name="price" id="">
+                    </div>
+                </div>
+                <div class="div-box">
+                    <div class="div-title">
+                        <label for="">Agrega una Imagen a tu Producto</label>
+                    </div>
+                    <div class="div-input">
+                        <input type="file" name="image" id="">
+                    </div>
+                </div>
+                <div class="buton-box">
+                    <input type="submit" value="Crear Producto">
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

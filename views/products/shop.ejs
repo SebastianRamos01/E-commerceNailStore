@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/stylesShop.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ce6a0d0b56.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+    <%- include('../partials/head.ejs') %>
+        <title>Tienda</title>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+        <main>
+            <div class="main-title">
+                Nuestra Tienda
+            </div>
+            <a href="/shop/product-creator" class="create-buton">
+                <i class="fa-solid fa-plus"></i>
+                Crea tu Producto
+            </a>
+            <ul>
+                <% for(let i=0; i< allProducts.length; i++) {%>
+                    <li class="shop-list">
+                        <article class="article-box">
+                            <div class="image-box">
+                                <a href="/shop/product-detail/<%= allProducts[i].id %>">
+                                    <img src="<%= allProducts[i].image %>" alt="" srcset="">
+                                </a>
+                            </div>
+                            <div class="info-section">
+                                <div class="name-product">
+                                    <%= allProducts[i].name %>
+                                </div>
+                                <div class="price-product">
+                                    <%= allProducts[i].price %>
+                                </div>
+                                <div class="description-product">
+                                    <%= allProducts[i].description %>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    <%}%>
+            </ul>
+        </main>
+        <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

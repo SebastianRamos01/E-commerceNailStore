@@ -1,0 +1,64 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #FFFFFF;
+}
+.main-title{
+    font-family: 'Aboreto', cursive;
+    font-size: 20px;
+    margin: 10px;
+    margin-left: 5px;
+}
+.create-buton{
+    font-family: 'Aboreto', cursive;
+    border: solid 1px black;
+    font-size: 13px;
+    margin: 5px;
+    font-weight: bolder;
+    padding: 2px;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+}
+.shop-list{
+    display: flex;
+    width: 60%;
+}
+.article-box{
+    background-color: #F5F5F5;
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    border-radius: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+}
+.image-box{
+    width: 35%;
+}
+img{
+    width: 100%;
+}
+.info-section{
+    width: 50%;
+}
+.name-product{
+    font-family: 'Aboreto', cursive;
+    margin: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.price-product{
+    font-family: 'Aboreto', cursive;
+    margin: 10px;
+    font-size: 25px;
+}
+.description-product{
+    font-family: 'Aboreto', cursive;
+    margin: 10px;
+    font-size: 15px;
+}

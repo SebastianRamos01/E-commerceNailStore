@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stylesProductEdit.css">
+    <%- include('../partials/head.ejs') %>
+    <title>EditarProducto</title>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <article class="articulo">
+                <form method="post" action="/editar?_method=PUT">
+                    <div id="imagen">
+                        <img src="<%= editarProducto.imagen%>" alt="">
+                        <input type="text" name="imagen" value="<%= editarProducto.imagen%>">
+                    </div>
+                    <div class="item" id="id">
+                        <label for="">ID</label>
+                        <input type="text" readonly="true" name="id" value="<%= editarProducto.id%>">
+                    </div>
+                    <div class="item" id="nombre">
+                        <label for="">Nombre</label>
+                        <input type="text" maxlength="32" name="nombre" value="<%= editarProducto.nombre%>">
+                    </div>
+                    <div class="item" id="precio">
+                        <label for="">Precio</label>
+                        <input type="number" maxlength="20" name="precio" value="<%= editarProducto.precio%>">
+                    </div>
+                    <div class="item" id="descripcion">
+                        <label for="">Descripcion</label>
+                        <input type="text" maxlength="300" name="descripcion" value="<%= editarProducto.descripcion%>">
+                    </div>
+                    <div class="item" id="categoria">
+                        <label for="">Categoria</label>
+                        <input type="text" maxlength="25" name="categoria" value="<%= editarProducto.categoria%>">
+                    </div>
+                    <button type="submit" class="boton">Confirmar cambios</button>
+                </form>
+        </article>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

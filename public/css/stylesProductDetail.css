@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    background-color: #EEEEEE;
+    font-family: "Roboto", sans-serif;
+    background-image: url("/images/Logo.jpg");
+    background-size: 7%;
+    background-position: 100px;
+}
+main {
+    height: 68vh;
+    max-width: 100vw;
+    max-height: 66.5vh;
+}
+.articulo {
+    display: flex;
+    border: solid 1px black;
+    height: 80%;
+    width: 70%;
+    margin-left: 40px;
+    border-radius: 20px;
+    background-color: #FFEBEE;
+}
+#img-product {
+    height: 400px;
+    max-width: 400px;
+    border: solid 1px black;
+    border-radius: 20px;
+}
+.imgBox {
+    margin-top: 40px;
+    margin-left: 100px;
+}
+.edits {
+    margin-left: 40px;
+}
+h3 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+p {
+    max-width: 300px;
+}
+.precio {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+h5 {
+    font-size: x-large;
+    display: inline;
+}
+.h4 {
+    font-size: x-large;
+}
+.descripcion {
+    font-size: large;
+}
+.p {
+    display: inline;
+    font-size: 22px;
+}
+.categoria {
+    margin-top: 40px;
+}

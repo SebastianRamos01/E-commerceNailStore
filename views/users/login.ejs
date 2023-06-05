@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/stylesLogin.css" rel="stylesheet" />
+    <%- include('../partials/head.ejs') %>
+        <title>Ingresá</title>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+        <main>
+            <div class="main">
+                <div class="section-box">
+                    <div class="login-image">
+                        <img src="/images/Logo.jpg" alt="No responde" />
+                    </div>
+                    <div class="form-box">
+                        <form action="/login" method="post">
+                            <div class="logo-box">
+                                <div class="logo">Bienvenido!</div>
+                            </div>
+                            <div class="titles-box">
+                                <div class="titles">Email</div>
+                            </div>
+                            <div class="input-box">
+                                <input type="email" class="input" placeholder="Email" name="email" />
+                            </div>
+                            <div class="titles-box">
+                                <div class="titles">Contraseña</div>
+                            </div>
+                            <div class="input-box">
+                                <input type="password" class="input" placeholder="Contraseña" name="password"/>
+                            </div>
+                            <div class="submit-box">
+                                <div class="submit-botom">
+                                    <input type="submit" class="input" id="send-botom" value="Ingresar" />
+                                </div>
+                                <a href="/password" id="password">Olvidaste tu contraseña?</a>
+                            </div>
+                            <a href="/register" id="register">Crea tu Cuenta</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('../partials/footer.ejs') %>
+</body>
+</html>
