@@ -13,7 +13,7 @@
     <%- include('../partials/header.ejs') %>
     <main>
         <div class="main-div">
-            <form action="/shop/product-creator" method="POST">
+            <form action="/shop/product-creator" method="POST" enctype="multipart/form-data">
                 <div class="main-title">
                     Crea tu Producto
                 </div>
@@ -39,10 +39,10 @@
                     </div>
                     <div class="div-input-check">
                         <div>
-                            <input type="checkbox" name="category" id="">Producto    
+                            <input type="radio" name="category" value="Producto" id="">Producto    
                         </div>
                         <div>
-                            <input type="checkbox" name="category" id="">Servicio
+                            <input type="radio" name="category" value="Servicio" id="">Servicio
                         </div>
                     </div>
                 </div>
