@@ -62,3 +62,17 @@ img{
     margin: 10px;
     font-size: 15px;
 }
+.admin-butons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.edit-buton{
+    font-size: 13px;
+    font-family: 'Aboreto', cursive;;
+    border: solid 1px #1C1C1C;
+    padding: 4px;
+    background-color: #F8E0F7;
+    border-radius: 5px;
+    margin: 5px 0px 5px 0px;
+}

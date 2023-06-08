@@ -42,6 +42,14 @@
                                     <%= allProducts[i].description %>
                                 </div>
                             </div>
+                            <div class="admin-butons">
+                                <a href="/product-edit/<%=allProducts[i].id%>" class="edit-buton">Editar</a>
+                                <form action="" class="delete-buton">
+                                    <button type="submit">
+                                        Borrar
+                                    </button>
+                                </form>
+                            </div>
                         </article>
                     </li>
                     <%}%>

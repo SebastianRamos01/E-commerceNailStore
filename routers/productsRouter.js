@@ -24,7 +24,7 @@ productsRouter.post("/shop/product-creator", upload.single("image"), productsCon
 productsRouter.get("/shop/product-detail/:id", productsController.productDetail);
 
 productsRouter.get("/product-edit/:id", productsController.productEdit);
-productsRouter.put("/product-edit", productsController.putProductEdit)
+productsRouter.put("/product-edit", upload.single("image"), productsController.putProductEdit)
 
 
 module.exports = productsRouter
