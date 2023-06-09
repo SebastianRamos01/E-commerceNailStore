@@ -44,8 +44,8 @@
                             </div>
                             <div class="admin-butons">
                                 <a href="/product-edit/<%=allProducts[i].id%>" class="edit-buton">Editar</a>
-                                <form action="" class="delete-buton">
-                                    <button type="submit">
+                                <form action="/product-delete/<%=allProducts[i].id%>" class="delete-form" method="post">
+                                    <button type="submit" class="delete-buton">
                                         Borrar
                                     </button>
                                 </form>

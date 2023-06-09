@@ -26,5 +26,7 @@ productsRouter.get("/shop/product-detail/:id", productsController.productDetail)
 productsRouter.get("/product-edit/:id", productsController.productEdit);
 productsRouter.put("/product-edit", upload.single("image"), productsController.putProductEdit)
 
+productsRouter.post("/product-delete/:id", productsController.deleteProduct)
+
 
 module.exports = productsRouter

@@ -38,7 +38,7 @@ const productsController = {
         res.render(path.resolve(__dirname, "../views/products/productCreator"))
     },
     postProductCreator: (req, res) => {
-        const { name, description, category, price} = req.body
+        const { name, description, category, price } = req.body
 
         let image = req.file ? req.file.filename : "ProductImg.jpg"
 
@@ -86,6 +86,19 @@ const productsController = {
             where: { id: req.body.id }
         })
         .then(updatedProduct => {
+            res.redirect("/shop")
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    },
+    deleteProduct: (req, res) => {
+        const { id } = req.params
+        
+        db.Products.destroy({
+            where: { id }
+        })
+        .then(() => {
             res.redirect("/shop")
         })
         .catch(error => {

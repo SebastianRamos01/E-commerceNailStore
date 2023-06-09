@@ -4,7 +4,6 @@ const usersRouter = express.Router();
 
 const path = require("path")
 const multer = require("multer");
-const { filename } = require("../models/User");
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {

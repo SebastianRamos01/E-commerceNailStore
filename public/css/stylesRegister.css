@@ -33,7 +33,7 @@ body{
 }
 .titles-box{
     font-family: 'Aboreto', cursive;
-    padding: 3px;
+    margin: 5px 0px 5px 0px;
 }
 .input{
     outline: none;
@@ -41,8 +41,14 @@ body{
     padding: 5px;
     width: 100%;
 }
+#input-date{
+    padding: 5px;
+}
 .input-box{
     border: solid 1px black;
+}
+.input-date-box{
+    margin: 5px 0px 5px 0px;
 }
 .send-box{
     border: solid 1px black;
