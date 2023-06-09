@@ -1,7 +1,7 @@
 const path = require("path");
-const modelUser = require("../models/User")
 const bcrypt = require("bcrypt")
-const fs = require("fs")
+const fs = require("fs");
+const db = require("../database/models");
 const users = JSON.parse(fs.readFileSync("./data/users.json"), "utf-8");
 
 const usersController = {
@@ -30,23 +30,28 @@ const usersController = {
         const {
             name,
             email,
-            password,
-            birth,
+            birthdate,
         } = req.body
         
-        const image = req.file ? req.file.filename: " ";
-        let newImage;
-        if(image.length > 0){
-            newImage = `images/users/${image}`
-        }; 
-        const obj = {
-            ...req.body,
-            password: bcrypt.hashSync(password, 10),
-            img: newImage
-        }
-        modelUser.create(obj);
-        res.render("home")
-    },
+        let image = req.file ? req.file.filename : "RandomUser.jpg";
+        // let newImage;
+        // if(image.length > 0){
+        //     newImage = `images/users/${image}`
+        // }; 
+        db.Users.create({
+            name,
+            email,
+            birthdate,
+            password: bcrypt.hashSync(req.body.password, 10),
+            image
+        })
+        .then(newUser => {
+            res.redirect("/login")
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
 }
 
 module.exports = {

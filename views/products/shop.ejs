@@ -28,7 +28,7 @@
                         <article class="article-box">
                             <div class="image-box">
                                 <a href="/shop/product-detail/<%= allProducts[i].id %>">
-                                    <img src="<%= allProducts[i].image %>" alt="" srcset="">
+                                    <img src="/images/<%= allProducts[i].image %>" alt="NO responde" srcset="">
                                 </a>
                             </div>
                             <div class="info-section">
@@ -41,6 +41,14 @@
                                 <div class="description-product">
                                     <%= allProducts[i].description %>
                                 </div>
+                            </div>
+                            <div class="admin-butons">
+                                <a href="/product-edit/<%=allProducts[i].id%>" class="edit-buton">Editar</a>
+                                <form action="/product-delete/<%=allProducts[i].id%>" class="delete-form" method="post">
+                                    <button type="submit" class="delete-buton">
+                                        Borrar
+                                    </button>
+                                </form>
                             </div>
                         </article>
                     </li>

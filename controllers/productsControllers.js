@@ -1,10 +1,15 @@
 const path = require("path")
 const products = require("../data/products.json");
 const fs = require("fs")
+const db = require("../database/models");
+const { error } = require("console");
 
 const productsController = {
     shop: (req,res) => {
-        res.render(path.join(__dirname, "../views/products/shop"),{"allProducts":products})
+        db.Products.findAll()
+        .then(data => {
+            return res.render(path.join(__dirname, "../views/products/shop"), { "allProducts": data });
+        })
     },
     cart: (req,res) => {
         const userSession = req.cookies.userSession;
@@ -17,69 +22,88 @@ const productsController = {
     },
     productDetail: (req,res) => {
         const {id} = req.params;
-        const detalle = products.find(i => i.id == id);
-        res.render(path.resolve(__dirname, "../views/products/productDetail.ejs"),{detalle});
+        
+        db.Products.findByPk(id)
+        .then(product => {
+            res.render(path.resolve(__dirname, "../views/products/productDetail.ejs"),{ product });
+        })
     },
     productCreator: (req,res) => {
-        const userSession = req.cookies.userSession;
+        // const userSession = req.cookies.userSession;
 
-        if(userSession){
-            res.render(path.resolve(__dirname, "../views/products/productCreator"))
-        }else{
-            res.redirect("/login")
-        }
+        // if(userSession){
+        // }else{
+        //     res.redirect("/login")
+        // }
+        res.render(path.resolve(__dirname, "../views/products/productCreator"))
     },
-    postProductCreator: (req, res) =>{
-        const {
+    postProductCreator: (req, res) => {
+        const { name, description, category, price } = req.body
+
+        let image = req.file ? req.file.filename : "ProductImg.jpg"
+
+        db.Products.create({
             name,
             description,
             category,
             price,
             image
-        } = req.body;
-    
-        const newId = products[products.length - 1].id + 1;
-    
-        const obj = {
-            id: newId,
-            name,
-            description,
-            category,
-            price,
-            image
-        }
-        products.push(obj)
-        res.redirect("/shop")
-    },
-
-    filename: path.join(__dirname, "../data/products1.json"),
-    getAllProducts: () => {
-        return JSON.parse(fs.readFileSync(productsController.filename, "utf-8"));
+        })
+        .then(newProduct => {
+            return res.redirect("/shop");
+        })
+        .catch(error => {
+            console.log(error)
+        })
     },
 
     productEdit: (req,res) => {
-        const userSession = req.cookies.userSession;
-
-        if(userSession){
-            const { id } = req.params;
-            let allProducts = productsController.getAllProducts();
-        
-            const findProduct = products.find(i => i.id == id);
-        
-            res.render(path.resolve(__dirname, "../views/products/productEdit.ejs"),{editarProducto});
-        }
+        // const userSession = req.cookies.userSession;
+        // if(userSession){
+        const { id } = req.params;
+        //     let allProducts = productsController.getAllProducts();
+        //     const findProduct = products.find(i => i.id == id);
+        // }
+        db.Products.findByPk(id)
+        .then(data => {
+            res.render(path.resolve(__dirname, "../views/products/productEdit.ejs"),{ data });
+        })
+        .catch(error => {
+            console.log(error)
+        })
     },
     putProductEdit: (req,res) => {
-        const productoEditado = products.forEach(i => {
-            if (i.id == req.body.id) {
-                i.image = req.body.image;
-                i.nombre = req.body.name;
-                i.categoria = req.body.category;
-                i.descripcion = req.body.description;
-                i.precio = req.body.price;
-            };
-        });
-        res.redirect("productDetail/" + req.body.id);
+        const { name, price, category, description} = req.body
+        let image = req.file ? req.file.filename : "productIMG.jpg";
+
+        db.Products.update({
+            name: name,
+            price: price,
+            description: description,
+            category: category,
+            image
+        },{
+            where: { id: req.body.id }
+        })
+        .then(updatedProduct => {
+            res.redirect("/shop")
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    },
+    deleteProduct: (req, res) => {
+        const { id } = req.params
+        
+        db.Products.destroy({
+            where: { id }
+        })
+        .then(() => {
+            res.redirect("/shop")
+        })
+        .catch(error => {
+            console.log(error)
+        })
     }
 }
 
