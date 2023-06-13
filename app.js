@@ -16,6 +16,30 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(methodOverride("_method"));
 
+const session = require("express-session")
+app.use(session({secret: "clave-secreta"}))
+
+const db = require("./database/models")
+app.use((req, res, next) => {
+    const userSession = req.session.email;
+
+    if(userSession){
+        db.Users.findOne({
+            where: {email: userSession}
+        })
+        .then(user => {
+            res.locals.user = user
+            next()
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }else{
+        res.locals.user = null;
+        next()
+    }
+})
+
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 
