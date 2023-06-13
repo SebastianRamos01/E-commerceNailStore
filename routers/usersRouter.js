@@ -23,4 +23,6 @@ usersRouter.post("/login", usersController.postLogin)
 usersRouter.get("/register", usersController.register);
 usersRouter.post("/register", upload.single("img"), usersController.postRegister)
 
+usersRouter.get("/user-detail/:id", usersController.userDetail)
+
 module.exports = usersRouter;

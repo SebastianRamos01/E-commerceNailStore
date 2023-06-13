@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stylesUserDetail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <%- include('../partials/head.ejs') %>
+    <title>User Detail</title>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <div class="detail-box">
+            <div class="img-box">
+                <img src="/images/users/<%= user.image %>" alt="NoResponse" srcset="">
+            </div>
+            <div class="text-box">
+                <div class="name">Nombre</div>
+                <label for="name"><%= user.name%></label>
+                <div class="email">Email</div>
+                <label for="email"></label>
+                <div class="bithdate">Birthdate</div>
+            </div>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

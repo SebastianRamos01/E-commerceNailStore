@@ -30,7 +30,13 @@
         </div>
         <div class="cart">
             <div class="user-icon">
-                <i class="fa-solid fa-user"></i>
+                <% if (user) { %>
+                    <a href="/user-detail/<%=user.id%>" class="user-box">
+                        <img src="/images/users/<%=user.image%>" alt="NoResponde" srcset="" class="user-image">
+                    </a>
+                <% }else{ %>
+                    <i class="fa-solid fa-user"></i>
+                <% } %>
             </div>
             <div class="cart-icon">
                 <a href="/cart">

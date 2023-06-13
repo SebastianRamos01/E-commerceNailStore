@@ -7,6 +7,10 @@ body{
     background-color: #FFFFFF;
     font-family: "Roboto", sans-serif;
 }
+img{
+    width: 100%;
+    vertical-align: bottom;
+}
 .product-section{
     display: flex;
     justify-content: space-around;
