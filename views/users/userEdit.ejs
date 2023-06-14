@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stylesUserEdit.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <%- include('../partials/head.ejs') %>
+    <title>Editar Usario</title>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <form class="detail-box" method="post" action="/user-edit?_method=PUT" enctype="multipart/form-data">
+            <div class="titles">Editar Mi Usuario</div>
+            <div class="img-box">
+                <img src="/images/users/<%= user.image %>" alt="NoResponse" srcset="">
+            </div>
+            <div>
+                <input type="file" name="image" id="" value="<%= user.image %>">
+            </div>
+            <div class="text-box">
+                <input type="text" value="<%= user.id %>" name="id" readonly>
+                <div class="titles">Nombre</div>
+                <div>
+                    <input type="text" name="name" value="<%= user.name %>">
+                </div>
+                <div class="titles">Email</div>
+                <div>
+                    <input type="text" name="email" value="<%= user.email %>">
+                </div>
+                <div class="titles">Fecha de Nacimiento</div>
+                <div>
+                    <input type="date" name="birthdate" id="" value="<%= user.birthdate %>">
+                </div>
+                <div>
+                    <input type="submit" value="Confirmar cambios">
+                </div>
+            </div>
+        </form>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

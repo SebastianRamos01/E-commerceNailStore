@@ -77,9 +77,48 @@ const usersController = {
             res.render(path.resolve(__dirname, "../views/users/userDetail.ejs"),{ user }))
     },
 
-    userEdit: () => {},
+    userEdit: (req, res) => {
+        const { id } = req.params;
 
-    postUserEdit: () => {}
+        db.Users.findByPk(id)
+        .then(user => {
+            res.render(path.resolve(__dirname, "../views/users/userEdit.ejs"),{ user });
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    },
+
+    postUserEdit: (req, res) => {
+
+        const { name, email, birthdate, id } = req.body
+        let image = req.file ? req.file.filename : "userIMG.jpg";
+
+        db.Users.update({
+            name: name,
+            email: email,
+            birthdate: birthdate,
+            image
+        },{
+            where: { id: id }
+        })
+        .then(putUser => {
+            res.redirect("/home")
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    },
+    userDelete: (req, res) => {
+        const { id } = req.params
+
+        db.Users.destroy({
+            where: { id: id}
+        })
+        .then(userDeleted => {
+            res.redirect("home")
+        })
+    }
 }
 
 module.exports = {

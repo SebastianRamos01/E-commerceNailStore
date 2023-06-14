@@ -46,6 +46,13 @@ header {
     font-family: 'Aboreto', cursive;
     font-size: 40px;
 }
+.default-image{
+    padding: 5px;
+}
+.user-box{
+    display: flex;
+    width: 100%;
+}
 .user-image{
     border-radius: 50%;
     width: 40px;
