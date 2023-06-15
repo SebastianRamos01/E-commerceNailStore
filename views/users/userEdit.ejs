@@ -17,25 +17,27 @@
             <div class="img-box">
                 <img src="/images/users/<%= user.image %>" alt="NoResponse" srcset="">
             </div>
-            <div>
-                <input type="file" name="image" id="" value="<%= user.image %>">
+            <div class="input-box">
+                <input type="file" name="image" id="edit-input" value="<%= user.image %>">
             </div>
             <div class="text-box">
-                <input type="text" value="<%= user.id %>" name="id" readonly>
+                <div class="input-box-id">
+                    <input type="text" value="<%= user.id %>" id="edit-input" name="id" readonly>
+                </div>
                 <div class="titles">Nombre</div>
-                <div>
-                    <input type="text" name="name" value="<%= user.name %>">
+                <div class="input-box">
+                    <input type="text" name="name" id="edit-input" value="<%= user.name %>">
                 </div>
                 <div class="titles">Email</div>
-                <div>
-                    <input type="text" name="email" value="<%= user.email %>">
+                <div class="input-box">
+                    <input type="text" name="email" id="edit-input" value="<%= user.email %>">
                 </div>
                 <div class="titles">Fecha de Nacimiento</div>
-                <div>
-                    <input type="date" name="birthdate" id="" value="<%= user.birthdate %>">
+                <div class="input-box">
+                    <input type="date" name="birthdate" id="edit-input" value="<%= user.birthdate %>">
                 </div>
-                <div>
-                    <input type="submit" value="Confirmar cambios">
+                <div class="post-buton">
+                    <input type="submit" id="edit-buton" value="Confirmar cambios">
                 </div>
             </div>
         </form>

@@ -16,7 +16,9 @@ body {
     background-color: white;
 }
 img {
+    width: 100%;
     height: 100%;
+    vertical-align: bottom;
 }
 .login-image{
     width: 50%;

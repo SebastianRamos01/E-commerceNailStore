@@ -92,13 +92,13 @@ const usersController = {
     postUserEdit: (req, res) => {
 
         const { name, email, birthdate, id } = req.body
-        let image = req.file ? req.file.filename : "userIMG.jpg";
+        let newImage = req.file ? req.file.filename : req.file;
 
         db.Users.update({
             name: name,
             email: email,
             birthdate: birthdate,
-            image
+            image: newImage
         },{
             where: { id: id }
         })
@@ -113,10 +113,10 @@ const usersController = {
         const { id } = req.params
 
         db.Users.destroy({
-            where: { id: id}
+            where: { id: id }
         })
         .then(userDeleted => {
-            res.redirect("home")
+            res.redirect("/home")
         })
     }
 }

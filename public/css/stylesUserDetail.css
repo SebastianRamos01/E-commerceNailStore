@@ -40,3 +40,32 @@ img{
     border-bottom: 1px solid black;
     margin: 3px 0px 3px 0px;
 }
+.user-butons{
+    display: flex;
+    flex-direction: column-reverse;
+}
+#delete-buton{
+    background-color: #DB655E;
+    padding: 5px;
+    border: none;
+    font-family: 'Aboreto', cursive;
+}
+#delete-buton:hover{
+    background-color: #DB261D;
+}
+.delete-box{
+    border: solid 1px black;
+    margin: 5px;
+}
+.edit-box{
+    margin: 5px;
+}
+.edit-buton{
+    border: solid 1px black;
+    padding: 6px;
+    font-size: 14px;
+    background-color: pink;
+}
+.edit-buton:hover{
+    background-color: plum;
+}

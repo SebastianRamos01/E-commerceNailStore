@@ -74,7 +74,7 @@ const productsController = {
     },
     putProductEdit: (req,res) => {
         const { name, price, category, description} = req.body
-        let image = req.file ? req.file.filename : "productIMG.jpg";
+        let image = req.file ? req.file.filename : req.file;
 
         db.Products.update({
             name: name,

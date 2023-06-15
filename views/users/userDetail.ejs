@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,35 +8,44 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <%- include('../partials/head.ejs') %>
-    <title>Detalle de Usuario</title>
+        <title>Detalle de Usuario</title>
 </head>
+
 <body>
     <%- include('../partials/header.ejs') %>
-    <main>
-        <div class="detail-box">
-            <div>
-                <a href="/user-edit/<%= user.id %>">Editar Usuario</a>
+        <main>
+            <div class="detail-box">
+                <div class="user-butons">
+                    <div class="edit-box">
+                        <a href="/user-edit/<%= user.id %>" class="edit-buton">Editar Usuario</a>
+                    </div>
+                        <form action="/user-delete/<%= user.id %>?_method=DELETE" method="post">
+                            <div class="delete-box">
+                                <button type="submit" id="delete-buton">Borrar Usuario</button>
+                            </div>
+                        </form>
+                </div>
+                <div class="titles">Mi Usuario</div>
+                <div class="img-box">
+                    <img src="/images/users/<%= user.image %>" alt="NoResponse" srcset="">
+                </div>
+                <div class="text-box">
+                    <div class="titles">Nombre</div>
+                    <label for="name" class="info">
+                        <%= user.name %>
+                    </label>
+                    <div class="titles">Email</div>
+                    <label for="email" class="info">
+                        <%= user.email %>
+                    </label>
+                    <div class="titles">Fecha de Nacimiento</div>
+                    <label for="birhtdate" class="info">
+                        <%= user.birthdate %>
+                    </label>
+                </div>
             </div>
-            <div>
-                <form action="" method="post">
-                    Borrar Usuario
-                    <button type="submit"></button>
-                </form>
-            </div>
-            <div class="titles">Mi Usuario</div>
-            <div class="img-box">
-                <img src="/images/users/<%= user.image %>" alt="NoResponse" srcset="">
-            </div>
-            <div class="text-box">
-                <div class="titles">Nombre</div>
-                <label for="name" class="info"><%= user.name %></label>
-                <div class="titles">Email</div>
-                <label for="email" class="info"><%= user.email %></label>
-                <div class="titles">Fecha de Nacimiento</div>
-                <label for="birhtdate" class="info"><%= user.birthdate %></label>
-            </div>
-        </div>
-    </main>
-    <%- include('../partials/footer.ejs') %>
+        </main>
+        <%- include('../partials/footer.ejs') %>
 </body>
+
 </html>
