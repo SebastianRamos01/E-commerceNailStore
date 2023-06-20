@@ -17,69 +17,40 @@
                 Destacados
             </div>
             <section class="product-section">
-                <div class="product-box">
-                    <div class="product-image">
-                        <img src="/images/img1.jpg" alt="No responde">
-                    </div>
-                    <div class="product-description">
-                        <div class="product-prize">$20000</div>
-                        <div class="product-title">TITULO PRODUCTO 1</div>
-                    </div>
-                </div>
-                <div class="product-box">
-                    <div class="product-image">
-                        <img src="/images/img2.jpg" alt="No responde">
-                    </div>
-                    <div class="product-description">
-                        <div class="product-prize">$20000</div>
-                        <div class="product-title">TITULO PRODUCTO 2</div>
-                    </div>
-                </div>
-                <div class="product-box">
-                    <div class="product-image">
-                        <img src="/images/img3.jpg" alt="No responde">
-                    </div>
-                    <div class="product-description">
-                        <div class="product-prize">$20000</div>
-                        <div class="product-title">TITULO PRODUCTO 3</div>
-                    </div>
-                </div>
+                <ul class="product-ul">
+                    <% for(let i=0; i < 3; i++) { %>
+                        <li class="product-box">
+                            <div class="product-image">
+                                <img src="/images/<%= allProducts[i].image %>" alt="No responde">
+                            </div>
+                            <div class="product-description">
+                                <div class="product-prize">$<%= allProducts[i].price %></div>
+                                <div class="product-title"><%= allProducts[i].name %></div>
+                            </div>
+                        </li>
+                    <% } %>
+                </ul>
             </section>
             <div class="title">
                 Mas productos
             </div>
             <section class="product-section">
-                <div class="product-box">
-                    <div class="product-image">
-                        <img src="/images/img6.jpg" alt="No responde">
-                    </div>
-                    <div class="product-description">
-                        <div class="product-prize">$20000</div>
-                        <div class="product-title">TITULO PRODUCTO X</div>
-                    </div>
-                </div>
-                <div class="product-box">
-                    <div class="product-image">
-                        <img src="/images/img8.jpg" alt="No responde">
-                    </div>
-                    <div class="product-description">
-                        <div class="product-prize">$20000</div>
-                        <div class="product-title">TITULO PRODUCTO X</div>
-                    </div>
-                </div>
-                <div class="product-box">
-                    <div class="product-image">
-                        <img src="/images/img7.jpg" alt="No responde">
-                    </div>
-                    <div class="product-description">
-                        <div class="product-prize">$20000</div>
-                        <div class="product-title">TITULO PRODUCTO X</div>
-                    </div>
-                </div>
+                <ul class="product-ul">
+                    <% for(let i=3; i < 6; i++) { %>
+                        <li class="product-box">
+                            <div class="product-image">
+                                <img src="/images/<%= allProducts[i].image %>" alt="No responde">
+                            </div>
+                            <div class="product-description">
+                                <div class="product-prize">$<%= allProducts[i].price %></div>
+                                <div class="product-title"><%= allProducts[i].name %></div>
+                            </div>
+                        </li>
+                    <% } %>
+                </ul>
             </section>
             </div>
         </main>
         <%- include('./partials/footer.ejs') %>
 </body>
-
 </html>

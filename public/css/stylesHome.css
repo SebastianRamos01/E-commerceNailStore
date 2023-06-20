@@ -27,6 +27,11 @@ img{
     width: 20%;
     background-color: #F5F5F5;
 }
+.product-ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 .product-image{
     width: fit-content;
 }
