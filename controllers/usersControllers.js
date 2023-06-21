@@ -118,6 +118,11 @@ const usersController = {
         .then(userDeleted => {
             res.redirect("/home")
         })
+    },
+    logout: (req, res) => {
+        req.session.destroy(error => {
+            error ? console.log(error) : res.redirect("/home")
+        })
     }
 }
 

@@ -31,9 +31,15 @@
         <div class="cart">
             <div class="user-icon">
                 <% if (user) { %>
-                    <a href="/user-detail/<%=user.id%>" class="user-box">
-                        <img src="/images/users/<%=user.image%>" alt="NoResponde" srcset="" class="user-image">
-                    </a>
+                    <div class="user-box">
+                        <img src="/images/users/<%=user.image%>" alt="NoResponde" srcset="" class="user-image" id="user-box">
+                    </div>
+                    <div class="display-box" id="display-box">
+                        <a href="/user-detail/<%=user.id%>" class="link-div">Detalle de Usuario</a>
+                        <form action="/logout" method="post" class="logout-form">
+                            <input type="submit" value="Logout" class="post-buton">
+                        </form>
+                    </div>
                 <% }else{ %>
                     <div class="default-image">
                         <i class="fa-solid fa-user"></i>
@@ -48,3 +54,4 @@
         </div>
     </div>
 </header>
+<script src="/scriptsjs/userInfo.js"></script>

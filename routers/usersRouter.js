@@ -30,4 +30,6 @@ usersRouter.put("/user-edit", upload.single("image"),usersController.postUserEdi
 
 usersRouter.delete("/user-delete/:id", usersController.userDelete)
 
+usersRouter.post("/logout", usersController.logout)
+
 module.exports = usersRouter;
