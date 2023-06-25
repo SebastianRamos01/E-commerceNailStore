@@ -1,14 +1,10 @@
 const userImg = document.getElementById("user-box")
 const userInfo = document.getElementById("display-box")
+const closeBtn = document.getElementById("close")
 
 userImg.addEventListener("click", () => {
-    if("click"){
-        userInfo.style.display = "block"
-    }else{
-        window.addEventListener("click", () => {
-            userInfo.style.display = "none"
-        })
-    }
+    userInfo.style.display = "block"
 })
-userImg.addEventListener("blur", () => {
+closeBtn.addEventListener("click", () => {
+    userInfo.style.display = "none"
 })

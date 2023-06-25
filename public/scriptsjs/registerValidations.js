@@ -1,0 +1,44 @@
+window.addEventListener("load", () => {
+    const form = document.getElementById("register-form")
+    const sendBtn = document.getElementById("snd-btn")
+    const nameInput = document.getElementById("name-input")
+    const emailInput = document.getElementById("email-input")
+    const passwordInput = document.getElementById("password-input")
+    const birthInput = document.getElementById("input-date")
+    const imgInput = document.getElementById("img-input")
+
+    sendBtn.addEventListener("click", (e) => {
+        e.preventDefault()
+        let errors = {}
+
+        if (nameInput.value.length < 1) {
+            errors.name = "Debe ingresar un nombre"
+        }
+        if (emailInput.value.length < 1) {
+            errors.email = "Debe ingresar un email"
+        }else if(emailInput.value.includes("@" && "." && "com") === false) {
+            errors.email = "Debe ingresar un email valido"
+        }
+        if (passwordInput.value.length < 1) {
+            errors.password = "Debe ingresar una contraseña"
+        }else if (passwordInput.value.length < 8) {
+            errors.password = "Debe ingresar una contraseña mas larga"
+        }
+        if (birthInput.value.length === 0) {
+            errors.birthday = "Debes ingresar un fecha de nacimiento"
+        }
+        if (imgInput.value.length < 1) {
+            imgInput.value.toUpperCase().includes(".JPG" || ".JEPG" || ".PNG" || ".GIF")
+            errors.image = "Debes ingresar una imagen (.jpg - .jepg - .png - .gif)"
+        }
+        if (Object.keys(errors).length >= 1) {
+            document.getElementById("name-error").innerText = (errors.name) ? errors.name : ""
+            document.getElementById("email-error").innerText = (errors.email) ? errors.email : ""
+            document.getElementById("password-error").innerText = (errors.password) ? errors.password : ""
+            document.getElementById("birth-error").innerText = (errors.birthday) ? errors.birthday : ""
+            document.getElementById("img-error").innerText = (errors.image) ? errors.image : ""
+        }else{
+            form.submit()
+        }
+    })
+})

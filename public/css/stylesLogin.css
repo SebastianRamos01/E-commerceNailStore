@@ -55,20 +55,37 @@ input:focus{
     margin-bottom: 5px;
     align-items: center;
 }
+#send-botom{
+    cursor: pointer;
+    background-color: #FFEFEE;
+}
 .submit-botom{
     border: 1px solid;
     margin-right: 5px;
+    
+}
+#send-botom:hover{
+    background-color: #FFEBEE;
 }
 a{
     text-decoration: none;
 }
 #password{
-    font-size: 13px;
+    font-size: 11px;
     border-bottom: solid 1px;
     color: grey;
+    font-family: 'Aboreto', cursive;
+}
+.redirect-box{
+    font-family: 'Aboreto', cursive;
+    font-size: 12px;
 }
 #register{
     color: black;
     border-bottom: 1px solid;
     width: fit-content;
+    font-weight: bold;
+}
+small{
+    color: #DB261D;
 }

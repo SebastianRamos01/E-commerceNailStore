@@ -18,7 +18,7 @@
                         <img src="/images/Logo.jpg" alt="No responde" />
                     </div>
                     <div class="form-box">
-                        <form action="/login" method="post">
+                        <form action="/login" method="post" id="login-form">
                             <div class="logo-box">
                                 <div class="logo">Bienvenido!</div>
                             </div>
@@ -26,26 +26,31 @@
                                 <div class="titles">Email</div>
                             </div>
                             <div class="input-box">
-                                <input type="email" class="input" placeholder="Email" name="email" />
+                                <input type="email" class="input" placeholder="Email" name="email" id="email-input"/>
                             </div>
+                            <small id="email-error"></small>
                             <div class="titles-box">
                                 <div class="titles">Contraseña</div>
                             </div>
                             <div class="input-box">
-                                <input type="password" class="input" placeholder="Contraseña" name="password"/>
+                                <input type="password" class="input" placeholder="Contraseña" name="password" id="password-input"/>
                             </div>
+                            <small id="password-error"></small>
                             <div class="submit-box">
                                 <div class="submit-botom">
                                     <input type="submit" class="input" id="send-botom" value="Ingresar" />
                                 </div>
                                 <a href="/password" id="password">Olvidaste tu contraseña?</a>
                             </div>
-                            <a href="/register" id="register">Crea tu Cuenta</a>
+                            <div class="redirect-box">
+                                No tienes una cuenta? Crea una <a href="/register" id="register">Aqui</a>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </main>
         <%- include('../partials/footer.ejs') %>
+        <script src="/scriptsjs/loginValidations.js"></script>
 </body>
 </html>

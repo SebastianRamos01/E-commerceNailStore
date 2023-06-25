@@ -58,6 +58,7 @@ header {
 .user-image{
     border-radius: 50%;
     width: 40px;
+    cursor: pointer;
 }
 .list-box{
     width: 30%;
@@ -101,7 +102,7 @@ a{
     border: solid 1px black;
     backdrop-filter: blur(5px);
     width: 135px;
-    height: 65px;
+    height: 95px;
     right: 20px;
     top: 26px;
 }
@@ -113,6 +114,9 @@ a{
     font-size: 11.5px;
     padding: 6px 0px 6px 0px;
     border-bottom: solid 0.5px black;
+    background-color: transparent;
+}
+.link-div:hover{
     background-color: #FFEBEE;
 }
 .logout-box{
@@ -126,5 +130,25 @@ a{
     border: none;
     font-family: 'Aboreto', cursive;
     font-size: 11.5px;
+    background: transparent;
+    transition: 0.5;
+    cursor: pointer;
+}
+.post-buton:hover{
     background-color: #FFEBEE;
+}
+.close-btn{
+    position: absolute;
+    padding: 5px;
+    top: 65px;
+    border: none;
+    left: 4px;
+    background: transparent;
+    font-family: 'Aboreto', cursive;
+    font-size: 11.5px;
+    transition: 0.5;
+    cursor: pointer;
+}
+.close-btn:hover{
+    background-color: #DB655E ;
 }

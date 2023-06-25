@@ -22,6 +22,10 @@ body{
 .register-image{
     width: 50%;
 }
+.main-img{
+    width: 100%;
+    vertical-align: bottom;
+}
 .form-box{
     width: 50%;
     display: flex;
@@ -52,11 +56,28 @@ body{
 }
 .send-box{
     border: solid 1px black;
-    margin: 5px 5px 5px 0px;
+    margin: 8px 5px 5px 0px;
     width: fit-content;
 }
 .send-botom{
-    background-color: white;
+    background-color: #FFEFEE;
     padding: 5px;
     border: none;
+    cursor: pointer;
+    font-family: 'Aboreto', cursive;
+    font-weight: bold;
+}
+.send-botom:hover{
+    background-color: #FFEBEE;
+}
+.login-redirect{
+    font-family: 'Aboreto', cursive;
+    font-size: 12px;
+}
+.redirect-word{
+    font-weight: bolder;
+    border-bottom: solid black 1px;
+}
+small{
+    color: #DB261D;
 }
