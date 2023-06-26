@@ -17,7 +17,6 @@ main {
     margin-left: 40px;
     border-radius: 5px;
     background-color: #FFEBEE;
-    
 }
 .texts{
     width: 50%;
@@ -62,11 +61,14 @@ input {
 }
 #id input {
     border: none;
-    display: inline;
+    display: none;
     font-weight: bold;
     font-size: 17px;
     width: 25px;
     text-align: center;
+}
+.title-id{
+    display: none;
 }
 .input-radio{
     display: flex;
@@ -83,12 +85,19 @@ input {
     width: 60%;
 }
 button {
+    font-family: 'Aboreto', cursive;
     margin-top: 10px;
     border: solid 1px rosybrown;
     border-radius: 5px;
     height: 30px;
     width: fit-content;
     padding: 7px;
+    background-color: #FFEBEE;
+    color: black;
+}
+button:hover{
     background-color: #f1959b;
-    color: white;
+}
+small{
+    color: #DB261D;
 }

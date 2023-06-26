@@ -41,11 +41,15 @@ input{
     border: none;
     background-color: white
 }
+.form-input{
+    width: 100%;
+}
 input:focus{
     outline: none;
 }
 textarea{
     border: none;
+    width: 100%;
 }
 textarea:focus{
     outline: none;
@@ -69,6 +73,17 @@ textarea:focus{
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     border: solid 1px black;
-    padding: 5px;
     margin: 10px;
+}
+.create-buton{
+    padding: 5px;
+    cursor: pointer;
+    background-color: #FFEFEE;
+    width: 100%;
+}
+.create-buton:hover{
+    background-color: #FFEBEE;
+}
+small{
+    color: #DB261D;
 }

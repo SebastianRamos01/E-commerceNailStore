@@ -13,50 +13,54 @@
     <%- include('../partials/header.ejs') %>
         <main>
             <article class="articulo">
-                <form method="post" action="/product-edit?_method=PUT" enctype="multipart/form-data">
+                <form method="post" action="/product-edit?_method=PUT" enctype="multipart/form-data" id="edit-product-form">
                     <div id="imagen">
                         <img src="/images/<%= data.image%>" alt="No responde">
-                        <input type="file" name="image" value="<%= data.image %>" alt="">
+                        <input type="file" name="image" value="<%= data.image %>" alt="Imagen de Producto" id="img-input">
+                        <small id="img-error"></small>
                     </div>
                     <div class="texts">
                         <div class="item" id="id">
-                            <label for="" class="title">ID</label>
+                            <label for="" class="title-id">ID</label>
                             <input type="text" readonly="true" name="id" value="<%= data.id%>">
                         </div>
                         <div class="item" id="nombre">
-                            <label for="" class="title">Nombre</label>
-                            <input class="input" type="text" maxlength="32" name="name" value="<%= data.name %>">
+                            <label for="name-input" class="title">Nombre</label>
+                            <input class="input" type="text" maxlength="32" name="name" value="<%= data.name %>" id="name-input">
+                            <small id="name-error"></small>
                         </div>
                         <div class="item" id="precio">
-                            <label for="" class="title">Precio</label>
-                            <input class="input" type="number" maxlength="20" name="price" value="<%= data.price%>">
+                            <label for="price-input" class="title">Precio</label>
+                            <input class="input" type="number" maxlength="20" name="price" value="<%= data.price%>" id="price-input">
+                            <small id="price-error"></small>
                         </div>
                         <div class="item" id="descripcion">
-                            <label for="" class="title">Descripcion</label>
-                            <textarea class="description" name="description" id="" cols="30"
-                                rows="10"><%= data.description%></textarea>
+                            <label for="description-input" class="title">Descripcion</label>
+                            <textarea class="description" name="description" id="description-input" cols="30" rows="10"><%= data.description%></textarea>
+                            <small id="description-error"></small>
                         </div>
                         <div class="item" id="categoria">
                             <label for="" class="title">Categoria</label>
                             <div class="input-radio">
                                 <% if(data.category=="Producto" ){ %>
-                                    <input type="radio" name="category" id="radio" value="Producto" checked>Producto
+                                    <input type="radio" name="category" id="category-input" value="Producto" checked>Producto
                                 <% }else{ %>
-                                    <input type="radio" name="category" id="radio" value="Producto">Producto
+                                    <input type="radio" name="category" id="category-input" value="Producto">Producto
                                 <% } %>
                                 <% if(data.category=="Servicio" ){ %>
-                                    <input type="radio" name="category" id="radio" value="Producto" checked>Servicio
+                                    <input type="radio" name="category" id="category-input" value="Servicio" checked>Servicio
                                 <% }else{ %>
-                                    <input type="radio" name="category" id="radio" value="Producto">Servicio
+                                    <input type="radio" name="category" id="category-input" value="Servicio">Servicio
                                 <% } %>
                             </div>
+                            <small id="category-error"></small>
                         </div>
-                        <button type="submit" class="boton">Confirmar cambios</button>
+                        <button type="submit" class="boton" id="">Confirmar cambios</button>
                     </div>
                 </form>
             </article>
         </main>
         <%- include('../partials/footer.ejs') %>
+        <script src="/scriptsjs/productEditValidations.js"></script>
 </body>
-
 </html>

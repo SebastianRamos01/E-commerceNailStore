@@ -20,9 +20,9 @@
                 <ul class="product-ul">
                     <% for(let i=0; i < 3; i++) { %>
                         <li class="product-box">
-                            <div class="product-image">
+                            <a href="/shop/product-detail/<%= allProducts[i].id %>" class="product-image">
                                 <img src="/images/<%= allProducts[i].image %>" alt="No responde">
-                            </div>
+                            </a>
                             <div class="product-description">
                                 <div class="product-prize">$<%= allProducts[i].price %></div>
                                 <div class="product-title"><%= allProducts[i].name %></div>
@@ -38,9 +38,9 @@
                 <ul class="product-ul">
                     <% for(let i=3; i < 6; i++) { %>
                         <li class="product-box">
-                            <div class="product-image">
+                            <a href="/shop/product-detail/<%= allProducts[i].id %>" class="product-image">
                                 <img src="/images/<%= allProducts[i].image %>" alt="No responde">
-                            </div>
+                            </a>
                             <div class="product-description">
                                 <div class="product-prize">$<%= allProducts[i].price %></div>
                                 <div class="product-title"><%= allProducts[i].name %></div>

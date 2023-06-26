@@ -13,61 +13,67 @@
     <%- include('../partials/header.ejs') %>
     <main>
         <div class="main-div">
-            <form action="/shop/product-creator" method="POST" enctype="multipart/form-data">
+            <form action="/shop/product-creator" method="POST" enctype="multipart/form-data" id="product-creator-form">
                 <div class="main-title">
                     Crea tu Producto
                 </div>
                 <div class="div-box">
                     <div class="div-title">
-                        <label for="">Nombra a tu Producto</label>
+                        <label for="name-input">Nombra a tu Producto</label>
                     </div>
                     <div class="div-input">
-                        <input type="text" name="name" id="">
-                    </div> 
+                        <input type="text" name="name" id="name-input" class="form-input">
+                    </div>
+                    <small id="name-error"></small>
                 </div>
                 <div class="div-box">
                     <div class="div-title">
-                        <label for="">Describe tu Producto</label>
+                        <label for="description-input">Describe tu Producto</label>
                     </div>
                     <div class="div-input">
-                        <textarea name="description" id="" cols="30" rows="10"></textarea>
+                        <textarea name="description" id="description-input" cols="30" rows="10"></textarea>
                     </div>
+                    <small id="description-error"></small>
                 </div>
                 <div class="div-box">
                     <div class="div-title">
-                        <label for="">Categoria del Producto</label>
+                        <label for="category-input">Categoria del Producto</label>
                     </div>
                     <div class="div-input-check">
                         <div>
-                            <input type="radio" name="category" value="Producto" id="">Producto    
+                            <input type="radio" name="category" value="Producto" id="category-input">Producto    
                         </div>
                         <div>
-                            <input type="radio" name="category" value="Servicio" id="">Servicio
+                            <input type="radio" name="category" value="Servicio" id="category-input">Servicio
                         </div>
                     </div>
+                    <small id="category-error"></small>
                 </div>
                 <div class="div-box">
                     <div class="div-title">
-                        <label for="">Define el Precio de tu Producto</label>
+                        <label for="price-input">Define el Precio de tu Producto</label>
                     </div>
                     <div class="div-input">
-                        <input type="text" name="price" id="">
+                        <input type="text" name="price" id="price-input" class="form-input">
                     </div>
+                    <small id="price-error"></small>
                 </div>
                 <div class="div-box">
                     <div class="div-title">
-                        <label for="">Agrega una Imagen a tu Producto</label>
+                        <label for="img-input">Agrega una Imagen a tu Producto</label>
                     </div>
                     <div class="div-input">
-                        <input type="file" name="image" id="">
+                        <input type="file" name="image" id="img-input" class="form-input">
                     </div>
+                    <small id="img-error"></small>
                 </div>
                 <div class="buton-box">
-                    <input type="submit" value="Crear Producto">
+                    <input type="submit" value="Crear Producto" id="send-buton" class="create-buton">
                 </div>
             </form>
         </div>
     </main>
     <%- include('../partials/footer.ejs') %>
+    <script src="/scriptsjs/productCreatorValidations.js"></script>
 </body>
 </html>
