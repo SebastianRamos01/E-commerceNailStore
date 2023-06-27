@@ -2,7 +2,6 @@ const path = require("path");
 const bcrypt = require("bcrypt")
 const fs = require("fs");
 const db = require("../database/models");
-const { error } = require("console");
 const users = JSON.parse(fs.readFileSync("./data/users.json"), "utf-8");
 
 const usersController = {
@@ -76,7 +75,6 @@ const usersController = {
         .then(user => 
             res.render(path.resolve(__dirname, "../views/users/userDetail.ejs"),{ user }))
     },
-
     userEdit: (req, res) => {
         const { id } = req.params;
 
@@ -88,7 +86,6 @@ const usersController = {
             console.log(error)
         })
     },
-
     postUserEdit: (req, res) => {
 
         const { name, email, birthdate, id } = req.body
@@ -123,6 +120,9 @@ const usersController = {
         req.session.destroy(error => {
             error ? console.log(error) : res.redirect("/home")
         })
+    },
+    resetPassword: (req, res) => {
+        res.render(path.resolve(__dirname, "../views/users/resetPassword.ejs"));
     }
 }
 

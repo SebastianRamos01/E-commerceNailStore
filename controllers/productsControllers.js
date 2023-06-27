@@ -2,7 +2,6 @@ const path = require("path")
 const products = require("../data/products.json");
 const fs = require("fs")
 const db = require("../database/models");
-const { error } = require("console");
 
 const productsController = {
     shop: (req,res) => {

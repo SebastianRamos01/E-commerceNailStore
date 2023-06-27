@@ -20,6 +20,8 @@ const upload = multer({storage})
 usersRouter.get("/login", usersController.login);
 usersRouter.post("/login", usersController.postLogin)
 
+usersRouter.get("/reset-password", usersController.resetPassword)
+
 usersRouter.get("/register", usersController.register);
 usersRouter.post("/register", upload.single("img"), usersController.postRegister)
 

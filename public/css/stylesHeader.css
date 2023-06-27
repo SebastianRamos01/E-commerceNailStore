@@ -26,9 +26,10 @@ header {
     height: fit-content;
 }
 .text-search-box{
-    padding: 5px;
+    margin: 1px;
 }
 #text-search{
+    padding: 5px;
     border: none;
     background-color: #FFEBEE;
 }
@@ -37,6 +38,9 @@ header {
 }
 .search-icon{
     padding: 5px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
 }
 .logo-box{
     width: 25%;
