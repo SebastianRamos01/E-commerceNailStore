@@ -11,7 +11,7 @@ body{
     align-items: center;
     justify-content: center;
 }
-form{
+#product-creator-form{
     width: 40%;
     border: solid 1px black;
     background-color: white;

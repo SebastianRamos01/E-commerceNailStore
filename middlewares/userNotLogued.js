@@ -7,3 +7,4 @@ function userNotLoggued(req, res, next) {
         res.render(path.resolve(__dirname, "../views/notLoggued.ejs"))
     }
 }
+module.exports = userNotLoggued

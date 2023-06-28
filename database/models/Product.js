@@ -24,12 +24,12 @@ module.exports = (sequelize, dataTypes) => {
         tableName: "products",
         timestamps: false
     })
-
-    // Product.associate = (models) => {
-    //     Product.belongsToMany(models.Carts, {
-    //         through: 'Cart_products',
-    //         foreignKey: 'product_id'
-    //     });
-    // };
+    
+    Product.associate = (models) => {
+        Product.belongsToMany(models.Carts, {
+            through: 'Cart_products',
+            foreignKey: 'product_id'
+        });
+    };
     return Product
 }

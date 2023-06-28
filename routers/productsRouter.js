@@ -1,6 +1,6 @@
 const express = require("express");
 const multer = require("multer")
-
+const notLoggued = require("../middlewares/userNotLogued")
 const {productsController} = require("../controllers/productsControllers");
 
 const storage = multer.diskStorage({
@@ -16,7 +16,10 @@ const upload = multer({ storage: storage })
 const productsRouter = express.Router();
 
 productsRouter.get("/shop", productsController.shop);
-productsRouter.get("/carrito", productsController.cart);
+
+productsRouter.get("/cart", notLoggued,productsController.cart);
+productsRouter.post("/cart/:id", productsController.addCart)
+productsRouter.delete("/delete-cart/:id", productsController.deleteCart)
 
 productsRouter.get("/shop/product-creator", productsController.productCreator);
 productsRouter.post("/shop/product-creator", upload.single("image"), productsController.postProductCreator)

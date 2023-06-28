@@ -21,8 +21,8 @@
                     </div>
                     <div class="texts">
                         <div class="item" id="id">
-                            <label for="" class="title-id">ID</label>
-                            <input type="text" readonly="true" name="id" value="<%= data.id%>">
+                            <label for="id-input" class="title-id">ID</label>
+                            <input type="text" readonly="true" name="id" value="<%= data.id%>" id="id-input">
                         </div>
                         <div class="item" id="nombre">
                             <label for="name-input" class="title">Nombre</label>
@@ -40,7 +40,7 @@
                             <small id="description-error"></small>
                         </div>
                         <div class="item" id="categoria">
-                            <label for="" class="title">Categoria</label>
+                            <label for="category-input" class="title">Categoria</label>
                             <div class="input-radio">
                                 <% if(data.category=="Producto" ){ %>
                                     <input type="radio" name="category" id="category-input" value="Producto" checked>Producto
@@ -55,7 +55,7 @@
                             </div>
                             <small id="category-error"></small>
                         </div>
-                        <button type="submit" class="boton" id="">Confirmar cambios</button>
+                        <button type="submit" class="boton" id="post-buton">Confirmar cambios</button>
                     </div>
                 </form>
             </article>
