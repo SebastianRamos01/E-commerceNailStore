@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.main-title{
+    font-family: 'Aboreto', cursive;
+    font-size: 25px;
+    font-weight: bolder;
+    margin: 10px 0px 10px 0px;
+}
+.text-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: rgb(255,235,238);
+background: linear-gradient(90deg, rgba(255,235,238,1) 0%, rgba(245,245,245,1) 50%, rgba(255,235,238,1) 100%);
+}
+.logo-img{
+    width: 40%;
+}
+img{
+    width: 100%;
+    vertical-align: bottom;
+}
+.info{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.title{
+    width: 100%;
+    font-family: 'Aboreto', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0px 10px 5px;
+}
+.text{
+    width: 100%;
+    font-family: 'Aboreto', cursive;
+    font-size: 15px;
+}

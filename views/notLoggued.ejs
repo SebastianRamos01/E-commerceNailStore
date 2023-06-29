@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/stylesNotLogedError.css" rel="stylesheet">
+    <%- include('./partials/head.ejs') %>
+    <title>Error</title>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+        <div class="alert-box">
+            <div class="alert-text">
+                Debes iniciar sesion para continuar
+            </div>
+            <div class="redirect-box">
+                <a href="/login" class="redirect-text">Inicia Sesion</a>
+            </div>
+            <div class="alert-text">
+                No tienes una cuenta ingresa aqui
+            </div>
+            <div class="redirect-box">
+                <a href="/register" class="redirect-text">Registrate</a>
+            </div>
+        </div>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

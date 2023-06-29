@@ -17,7 +17,13 @@ app.use(express.json());
 app.use(methodOverride("_method"));
 
 const session = require("express-session")
-app.use(session({secret: "clave-secreta"}))
+app.use(session({
+    secret: "clave-secreta",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {secure: false},
+    maxAge: Date.now() + (1 * 86400 * 1000)
+}))
 
 const db = require("./database/models")
 app.use((req, res, next) => {

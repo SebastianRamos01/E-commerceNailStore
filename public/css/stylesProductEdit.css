@@ -17,7 +17,6 @@ main {
     margin-left: 40px;
     border-radius: 5px;
     background-color: #FFEBEE;
-    
 }
 .texts{
     width: 50%;
@@ -36,7 +35,7 @@ p {
     font-size: 40px;
     margin-bottom: 30px;
 }
-form {
+#edit-product-form{
     display: flex;
     flex-direction: row;
 }
@@ -62,11 +61,14 @@ input {
 }
 #id input {
     border: none;
-    display: inline;
+    display: none;
     font-weight: bold;
     font-size: 17px;
     width: 25px;
     text-align: center;
+}
+.title-id{
+    display: none;
 }
 .input-radio{
     display: flex;
@@ -82,13 +84,20 @@ input {
     padding: 5px;
     width: 60%;
 }
-button {
+#post-buton{
+    font-family: 'Aboreto', cursive;
     margin-top: 10px;
     border: solid 1px rosybrown;
     border-radius: 5px;
     height: 30px;
     width: fit-content;
     padding: 7px;
+    background-color: #FFEBEE;
+    color: black;
+}
+#post-buton:hover{
     background-color: #f1959b;
-    color: white;
+}
+small{
+    color: #DB261D;
 }

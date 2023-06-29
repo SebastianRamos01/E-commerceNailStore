@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/stylescCart.css">
+    <link rel="stylesheet" href="/css/stylesCart.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <%- include('../partials/head.ejs') %>
@@ -15,51 +15,71 @@
 <body>
     <%- include('../partials/header.ejs') %>
         <main>
-            <section class="elementos">
-                <h2>ELEMENTOS EN TU CARRITO DE COMPRAS</h2>
-                <div class="producto">
-                    <img src="/images/espacioImagen.jpg" alt="">
-                    <div class="descripcion">
-                        <div class="nombre">NOMBRE DEL PRODUCTO</div>
-                        <div class="precio">$ 0000</div>
+            <%if (allProducts.length> 0) {%>
+                <section class="product-section">
+                    <div class="titles">Productos en tu carrito</div>
+                    <% for (let i=0; i < allProducts.length; i++) { %>
+                        <div class="product-box">
+                            <a href="/shop/product-detail/<%=allProducts[i].id%>" class="">
+                                <img class="cart-img" src="/images/<%=allProducts[i].image%>" alt="product img">
+                            </a>
+                            <div class="product-description">
+                                <div class="product-texts">
+                                    <%=allProducts[i].name%>
+                                </div>
+                                <div class="product-texts">
+                                    $ <%=allProducts[i].price%>
+                                </div>
+                                <form class="delete-box" action="/delete-cart/<%=allProducts[i].id%>?_method=DELETE" method="post">
+                                    <button type="submit" class="delete-buton">
+                                        Quitar del Carrito
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <% } %>
+                </section>
+                <section class="cart-details">
+                    <div class="detail-titles">Resumen de tu Compra</div>
+                    <ul class="product-list">
+                        <% for (let i=0; i < allProducts.length; i++) { %>
+                            <li class="product-detail">
+                                <div class="product-texts">
+                                    <%=allProducts[i].name%>_
+                                </div>
+                                <strong class="product-texts">
+                                    $<%=allProducts[i].price%>
+                                </strong>
+                            </li>
+                            <% } %>
+                    </ul>
+                    <div class="pay-box">
+                        <div class="total-amount-box">
+                            <div class="detail-titles">Total</div>
+                            <% let contador=0; %>
+                                <% for (let i=0; i < allProducts.length; i++) { %>
+                                    <% contador +=parseFloat(allProducts[i].price) %>
+                                        <% } %>
+                                            <p class="total-amount">
+                                                $<%= contador %>
+                                            </p>
+                        </div>
+                        <div class="confirm-box">
+                            <input type="button" value="Seguir con la compra" class="confirm-buton">
+                        </div>
                     </div>
-                </div>
-                <div class="producto">
-                    <img src="/images/espacioImagen.jpg" alt="">
-                    <div class="descripcion">
-                        <div class="nombre">NOMBRE DEL PRODUCTO</div>
-                        <div class="precio">$ 0000</div>
+                </section>
+                <!-- <i id="flechita" class="fas fa-arrow-right"></i> -->
+                <%} else { %>
+                    <div class="alert-box">
+                        <div class="alert-title">¡No hay nada en tu carrito de compras!</div>
+                        <p class="alert-text">Debe agregar productos a su carrito para comprar.</p>
+                        <p class="alert-text">Visite la <a href="/shop" class="redirect-text">tienda </a>para ver nuestros productos.</p>
                     </div>
-                </div>
-                <div class="producto">
-                    <img src="/images/espacioImagen.jpg" alt="">
-                    <div class="descripcion">
-                        <div class="nombre">NOMBRE DEL PRODUCTO</div>
-                        <div class="precio">$ 0000</div>
-                    </div>
-                </div>
-            </section>
-            <section class="resumen">
-                <h2>RESUMEN DE TU COMPRA</h2>
-                <ul class="unorderList">
-                    <li>NOMBRE DEL PRODUCTO $0000</li>
-                    <li>NOMBRE DEL PRODUCTO $0000</li>
-                    <li>NOMBRE DEL PRODUCTO $0000</li>
-                </ul>
-                <div>
-                    <div class="total">
-                        <p id="total">TOTAL</p>
-                        <p id="precioTotal">$0000</p>
-                    </div>
-                    <div class="metodospago">IR A PAGAR AHORA</div>
-                    <div class="irAPagar">
-                        <div class="metodoPago"></div>
-                        <div class="metodoPago"></div>
-                        <div class="metodoPago"></div>
-                    </div>
-                </div>
-            </section>
+                    <% } %>
+                        <script src="/scriptsjs/cart.js"></script>
         </main>
         <%- include('../partials/footer.ejs') %>
 </body>
+
 </html>

@@ -17,7 +17,6 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Aboreto', cursive;
 }
 img{
     width: 100%;
@@ -35,37 +34,35 @@ img{
 .titles{
     font-weight: bold;
     margin: 4px 0px 4px 0px;
-}
-.info{
-    border-bottom: 1px solid black;
-    margin: 3px 0px 3px 0px;
-}
-.user-butons{
-    display: flex;
-    flex-direction: column-reverse;
-}
-#delete-buton{
-    background-color: #DB655E;
-    padding: 5px;
-    border: none;
     font-family: 'Aboreto', cursive;
 }
-#delete-buton:hover{
-    background-color: #DB261D;
+.edit-input{
+    border: none;
+    padding: 5px;
+    width: 100%;
 }
-.delete-box{
-    border: solid 1px black;
-    margin: 5px;
+.edit-input:focus{
+    outline: none;
 }
-.edit-box{
-    margin: 5px;
+.input-box{
+    border: 1px solid black;
 }
-.edit-buton{
-    border: solid 1px black;
-    padding: 6px;
-    font-size: 14px;
+.input-box-id{
+    display: none;
+}
+#edit-buton{
+    border: none;
+    padding: 5px;
     background-color: pink;
 }
-.edit-buton:hover{
+.post-botom{
+    border: 1px solid black;
+    margin: 10px 0px 10px 0px;
+    width: fit-content;
+}
+#edit-buton:hover{
     background-color: plum;
+}
+small{
+    color: #DB261D;
 }

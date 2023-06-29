@@ -27,10 +27,11 @@ module.exports = (sequelize, dataTypes) => {
         tableName: "users",
         timestamps: false
     })
-    // User.associate = (models) => {
-    //     User.hasOne(models.Carts, {
-    //         foreignKey: 'user_id'
-    //     });
-    // };
+
+    User.associate = (models) => {
+        User.hasOne(models.Carts, {
+            foreignKey: 'user_id'
+        });
+    };
     return User;
 }

@@ -9,81 +9,107 @@ body {
 }
 main {
     display: flex;
-    justify-content: center;
-    margin-top: 2rem;
+    justify-content: space-between;
 }
-.elementos {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    margin-left: 10%;
-    border-right: solid 1px;
-}
-.resumen {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    margin-left: 10%;
-}
-h2 {
-    font-size: 27px;
-    font-weight: 100;
-}
-.producto {
-    display: flex;
-    margin: 20px 0px 20px 0px;
-}
-.descripcion {
-    margin-left: 15px;
-}
-.nombre {
-    font-size: 14px;
-    opacity: 0.6;
-    margin-top: 4px;
-}
-.precio {
-    font-size: 22px;
-    margin-top: 30px;
-}
-img {
-    max-width: 250px;
-    max-height: 250px;
-    border: 2px black solid;
-}
-.unorderList li {
-    font-size: 14px;
-    opacity: 0.5;
-    margin: 30px;
-    margin-left: 0px;
-    list-style: none;
-}
-.total {
-    display: flex;
-}
-#total {
-    font-size: x-large;
-    margin: 10px;
-    margin-left: 0px;
-}
-#precioTotal {
-    font-size: x-large;
-    margin: 10px;
-}
-.irAPagar {
-    display: flex;
-}
-.metodoPago {
-    width: 55px;
-    height: 55px;
+.product-section{
+    margin: 40px 0px;
+    width: 70%;
     background-color: white;
-    border: 1px black solid;
-    border-radius: 25px;
-    margin-right: 50px;
-    opacity: 0.2;
+    border: solid 1px black;
 }
-.metodospago {
-    font-size: 14px;
-    opacity: 0.5;
-    margin-top: 25px;
-    margin-bottom: 20px;
+.titles{
+    font-family: 'Aboreto', cursive;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 10px 15px;
+}
+.product-box{
+    border: solid 1px black;
+    margin: 10px;
+    display: flex;
+}
+.product-description{
+    font-family: 'Aboreto', cursive;
+    width: 60%;
+    margin: 5px;
+}
+.product-texts{
+    margin: 5px 0px;
+}
+.delete-box{
+    width: fit-content;
+    border: solid 1px black;
+}
+.delete-buton{
+    border: none;
+    padding: 5px;
+    background-color: #FFEFEE;
+    cursor: pointer;
+}
+.delete-buton:hover{
+    background-color: #FFEBEE;
+}
+.cart-details{
+    margin: 40px 0px;
+    width: 30%;
+    background-color: white;
+    height: fit-content;
+    border: solid 1px black;
+}
+.detail-titles{
+    font-family: 'Aboreto', cursive;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px 5px;
+}
+.product-list{
+    margin: 5px;
+}
+.product-detail{
+    display: flex;
+    font-family: 'Aboreto', cursive;
+}
+.total-amount{
+    margin: 0px 5px;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.confirm-buton{
+    border: none;
+    background-color: #FFEFEE;
+    font-family: 'Aboreto', cursive;
+    padding: 5px;
+    cursor: pointer;
+}
+.confirm-box{
+    margin: 5px;
+    width: fit-content;
+    border: solid 1px black;
+}
+.cart-img{
+    width: 250px;
+    height: 250px;
+    vertical-align: bottom;
+}
+.alert-box{
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    border: solid 1px black;
+    font-family: 'Aboreto', cursive;
+    text-align: center;
+    height: 150px;
+    background-color: #FFEBEE;
+}
+.alert-title{
+    font-weight: bold;
+    font-size: x-large;
+    margin: 10px;
+}
+.alert-text{
+    margin: 5px;
+}
+.redirect-text{
+    border-bottom: solid 1px black;
+    font-weight: bold;
 }

@@ -18,10 +18,14 @@
             <div class="main-title">
                 Nuestra Tienda
             </div>
-            <a href="/shop/product-creator" class="create-buton">
-                <i class="fa-solid fa-plus"></i>
-                Crea tu Producto
-            </a>
+            <% if(user){ %>
+                <% if(user.admin == 1){ %>
+                    <a href="/shop/product-creator" class="create-buton">
+                        <i class="fa-solid fa-plus"></i>
+                        Crea tu Producto
+                    </a>
+                <% } %>
+            <% } %>
             <ul>
                 <% for(let i=0; i< allProducts.length; i++) {%>
                     <li class="shop-list">
@@ -42,17 +46,21 @@
                                     <%= allProducts[i].description %>
                                 </div>
                             </div>
-                            <div class="admin-butons">
-                                <a href="/product-edit/<%=allProducts[i].id%>" class="edit-buton">Editar</a>
-                                <form action="/product-delete/<%=allProducts[i].id%>" class="delete-form" method="post">
-                                    <button type="submit" class="delete-buton">
-                                        Borrar
-                                    </button>
-                                </form>
-                            </div>
+                            <% if(user){ %>
+                                <% if(user.admin == 1){ %>
+                                <div class="admin-butons">
+                                    <a href="/product-edit/<%=allProducts[i].id%>" class="edit-buton">Editar</a>
+                                    <form action="/product-delete/<%=allProducts[i].id%>?_method=DELETE" class="delete-form" method="post">
+                                        <button type="submit" class="delete-buton">
+                                            Borrar
+                                        </button>
+                                    </form>
+                                </div>
+                                <% } %>
+                            <% } %>
                         </article>
                     </li>
-                    <%}%>
+                <%}%>
             </ul>
         </main>
         <%- include('../partials/footer.ejs') %>

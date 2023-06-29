@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/stylesContact.css" rel="stylesheet">
+    <%- include('./partials/head.ejs') %>
+    <title>Contacto</title>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+        <section class="section-box">
+            <div class="register-image">
+                <img src="/images/Logo.jpg" alt="No Responde" class="main-img">
+            </div>
+            <div class="form-box">
+                <form action="/register" method="post" enctype="multipart/form-data" id="register-form">
+                    <div class="main-title">Contacto</div>
+                    <div class="titles-box">
+                        <label for="name-input">Tu nombre</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input" name="name" id="name-input">
+                    </div>
+                    <small id="name-error"></small>
+                    <div class="titles-box">
+                        <label for="email-input">Email</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" class="input" name="email" id="email-input">
+                    </div>
+                    <small id="email-error"></small>
+                    <div class="titles-box">
+                        <label for="">Escribe tu mensaje</label>
+                    </div>
+                    <div class="input-box">
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <small id="email-error"></small>
+                    <div class="send-box">
+                        <input type="button" value="Enviar" class="send-botom" id="snd-btn">
+                    </div>
+                    <div class="login-redirect">
+                        <a href="/home" class="redirect-word">Volver</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

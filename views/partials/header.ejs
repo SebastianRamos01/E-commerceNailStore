@@ -7,35 +7,50 @@
                 </div>
             </a>
         </div>
-        <div class="search-box">
+        <form class="search-box" action="/search" method="get">
             <div class="text-search-box">
-                <input type="text" name="search" id="text-search" placeholder="Buscar">
+                <input type="search" name="search" id="text-search" placeholder="Buscar">
             </div>
-            <div class="search-icon">
+            <button class="search-icon">
                 <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-        </div>
+            </button>
+        </form>
         <div class="list-box">
             <ul class="list">
                 <li class="list-option">
                     <a href="/shop">Tienda</a>
                 </li>
                 <li class="list-option">
-                    <a href="/aboutus">Nosotros</a>
+                    <a href="/about-us">Nosotros</a>
                 </li>
-                <li class="list-option">
-                    <a href="/login">Ingresa</a>
-                </li>
+                <% if (user) { %>
+                    <li class="list-option">
+                        <a href="/contact">Contacto</a>
+                    </li>
+                <% }else{ %>
+                    <li class="list-option">
+                        <a href="/login">Ingresa</a>
+                    </li>
+                <% } %>
             </ul>
         </div>
         <div class="cart">
             <div class="user-icon">
                 <% if (user) { %>
-                    <a href="/user-detail/<%=user.id%>" class="user-box">
-                        <img src="/images/users/<%=user.image%>" alt="NoResponde" srcset="" class="user-image">
-                    </a>
+                    <div class="user-box">
+                        <img src="/images/users/<%=user.image%>" alt="NoResponde" srcset="" class="user-image" id="user-box">
+                    </div>
+                    <div class="display-box" id="display-box">
+                        <a href="/user-detail/<%=user.id%>" class="link-div">Detalle de Usuario</a>
+                        <form action="/logout" method="post" class="logout-form">
+                            <input type="submit" value="Logout" class="post-buton">
+                        </form>
+                        <input type="button" value="X" class="close-btn" id="close"> 
+                    </div>
                 <% }else{ %>
-                    <i class="fa-solid fa-user"></i>
+                    <div class="default-image">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
                 <% } %>
             </div>
             <div class="cart-icon">
@@ -46,3 +61,4 @@
         </div>
     </div>
 </header>
+<script src="/scriptsjs/userInfo.js"></script>

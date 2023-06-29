@@ -16,7 +16,7 @@
     <main>
         <article class="articulo">
             <div class="imgBox">
-                <img id="img-product" src="/images/<%= product.image %>" alt="">
+                <img id="img-product" src="/images/<%= product.image %>" alt="Imagen de Producto">
             </div>
             <div class="edits">
                 <h3><%= product.name%></h3>
@@ -27,6 +27,11 @@
                     <h5>Categoría: </h5>
                     <p class="p"><%= product.category%>.</p>
                 </div>
+                <form class="cart-form" action="/cart/<%=product.id%>" method="post">
+                    <button type="submit" class="add-cart">
+                        Agregar al Carrito<i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                </form>
             </div>
         </article>
     </main>
