@@ -1,5 +1,4 @@
 const path = require("path")
-const products = require("../data/products.json");
 const fs = require("fs")
 const db = require("../database/models");
 const { Op } = require("sequelize");
@@ -45,7 +44,6 @@ const productsController = {
     addCart: (req, res) => {
         const { id } = req.params;
         let user_id = res.locals.user.id;
-
 
         db.Carts.create({ user_id })
             .then(data => {
@@ -106,12 +104,6 @@ const productsController = {
         })
     },
     productCreator: (req,res) => {
-        // const userSession = req.cookies.userSession;
-
-        // if(userSession){
-        // }else{
-        //     res.redirect("/login")
-        // }
         res.render(path.resolve(__dirname, "../views/products/productCreator"))
     },
     postProductCreator: (req, res) => {
@@ -135,12 +127,9 @@ const productsController = {
     },
 
     productEdit: (req,res) => {
-        // const userSession = req.cookies.userSession;
-        // if(userSession){
+        
         const { id } = req.params;
-        //     let allProducts = productsController.getAllProducts();
-        //     const findProduct = products.find(i => i.id == id);
-        // }
+        
         db.Products.findByPk(id)
         .then(data => {
             res.render(path.resolve(__dirname, "../views/products/productEdit.ejs"),{ data });

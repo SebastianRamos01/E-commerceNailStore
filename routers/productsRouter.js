@@ -18,7 +18,7 @@ const productsRouter = express.Router();
 productsRouter.get("/shop", productsController.shop);
 
 productsRouter.get("/cart", notLoggued,productsController.cart);
-productsRouter.post("/cart/:id", productsController.addCart)
+productsRouter.post("/cart/:id", notLoggued, productsController.addCart)
 productsRouter.delete("/delete-cart/:id", productsController.deleteCart)
 
 productsRouter.get("/shop/product-creator", productsController.productCreator);

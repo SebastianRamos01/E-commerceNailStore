@@ -12,6 +12,7 @@ main {
     justify-content: space-between;
 }
 .product-section{
+    margin: 40px 0px;
     width: 70%;
     background-color: white;
     border: solid 1px black;
@@ -49,6 +50,7 @@ main {
     background-color: #FFEBEE;
 }
 .cart-details{
+    margin: 40px 0px;
     width: 30%;
     background-color: white;
     height: fit-content;
@@ -90,7 +92,9 @@ main {
     vertical-align: bottom;
 }
 .alert-box{
-    margin: 50px;
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 150px;
     border: solid 1px black;
     font-family: 'Aboreto', cursive;
     text-align: center;

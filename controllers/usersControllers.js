@@ -26,18 +26,12 @@ const usersController = {
                 req.session.email = email
                 res.redirect("/home")
             }else{
-                res.send("Creedenciales Incorrectas")
+                res.redirect("/login")
             }
         })
         .catch(error => {
             console.log(error)
         })
-        // if (user) {
-        //     res.cookie('userSession', email, { maxAge: 90000, httpOnly: true });
-        //     res.redirect("/home");
-        // } else {
-        //     res.send("Credenciales incorrectas.");
-        // }
     },
     register: (req,res) => {
         res.render(path.resolve(__dirname, "../views/users/register.ejs"));
@@ -50,10 +44,7 @@ const usersController = {
         } = req.body
         
         let image = req.file ? req.file.filename : "RandomUser.jpg";
-        // let newImage;
-        // if(image.length > 0){
-        //     newImage = `images/users/${image}`
-        // }; 
+        
         db.Users.create({
             name,
             email,
